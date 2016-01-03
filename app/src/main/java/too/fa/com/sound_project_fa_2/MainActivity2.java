@@ -702,7 +702,20 @@ public class MainActivity2 extends Activity
             int now2 = now/1000;
             int minute = now2/60;
             int second = (now2-minute*60);
-            tvTime.setText(minute + ":" + second);
+            String tempMinute = "";
+            if (minute < 10){
+                tempMinute = "0" + minute;
+            } else {
+                tempMinute = minute + "";
+            }
+
+            String tempSecond = "";
+            if (second < 10){
+                tempSecond = "0" + second;
+            } else {
+                tempSecond = "" + second;
+            }
+            tvTime.setText(tempMinute + ":" + tempSecond);
 
             int frames = mWaveformView.millisecsToPixels(now);
             mWaveformView.setPlayback(frames);
