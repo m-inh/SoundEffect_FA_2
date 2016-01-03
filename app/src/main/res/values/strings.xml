@@ -27,7 +27,7 @@
 
     <string name="button_start_record_activity">Record New</string>
 
-    <string name="sdcard_readonly">Sorry, the SD Card is mounted as read-only and Ringdroid requires it to be writable.</string>
+    <string name="sdcard_readonly">Sorry, the SD Card is mounted as read-only and SoundEffect requires it to be writable.</string>
     <string name="no_sdcard">Sorry, SoundEffect can\'t run unless you have an SD Card inserted.</string>
     <string name="sdcard_shared">Sorry, SoundEffect can\'t run while your handset is mounted as a USB device.</string>
 
@@ -109,7 +109,7 @@
 
     <string name="ringtone_name_label">Name:</string>
 
-    <string name="artist_name">Ringdroid</string>
+    <string name="artist_name">SoundEffect</string>
 
     <!--
      Delete confirmation dialog
@@ -121,8 +121,8 @@
     <string name="delete_music">Delete Music</string>
     <string name="delete_audio">Delete Audio</string>
 
-    <string name="confirm_delete_ringdroid">Are you sure?</string>
-    <string name="confirm_delete_non_ringdroid"
+    <string name="confirm_delete_soundeffect">Are you sure?</string>
+    <string name="confirm_delete_non_soundeffect"
         >Are you sure?  This file was not created using SoundEffect!</string>
 
     <string name="delete_ok_button">Delete</string>
