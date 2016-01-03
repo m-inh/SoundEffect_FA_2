@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+        <too.fa.com.sound_project_fa_2.WaveformView
+            android:id="@+id/waveform"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <too.fa.com.sound_project_fa_2.MarkerView
+            android:id="@+id/startmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/start_marker"
+            android:nextFocusDown="@+id/endmarker"
+            android:src="@drawable/marker_left" />
+
+        <too.fa.com.sound_project_fa_2.MarkerView
+            android:id="@+id/endmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/end_marker"
+            android:nextFocusDown="@+id/info"
+            android:nextFocusUp="@+id/startmarker"
+            android:src="@drawable/marker_right" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            style="@style/AudioFileInfoOverlayText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="info" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:orientation="vertical"
+        android:padding="5dp"></LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black" />
+
+    <TableRow
+        android:id="@+id/tr_preview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_weight="0.3"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_timetimeline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="@string/time_timeline"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="35sp" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_speeddown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_item_preview"
+                android:layout_marginRight="@dimen/margin_item_preview"
+                android:layout_weight="1"
+                android:background="@drawable/btn_state"
+                android:contentDescription="@string/btn_speeddown"
+                android:src="@android:drawable/ic_media_previous" />
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/margin_item_preview"
+                android:layout_marginRight="@dimen/margin_item_preview"
+                android:layout_weight="1"
+                android:background="@drawable/btn_state"
+                android:contentDescription="@string/btn_play"
+                android:src="@android:drawable/ic_media_play" />
+
+            <ImageView
+                android:id="@+id/iv_speedup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_item_preview"
+                android:layout_marginRight="@dimen/margin_item_preview"
+                android:layout_weight="1"
+                android:background="@drawable/btn_state"
+                android:contentDescription="@string/btn_speedup"
+                android:src="@android:drawable/ic_media_next" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_item_preview"
+            android:layout_weight="1"
+            android:background="@drawable/btn_state"
+            android:gravity="center_vertical"
+            tools:ignore="RtlHardcoded">
+
+            <ImageView
+                android:id="@+id/iv_volume"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:contentDescription="@string/btn_volume"
+                android:src="@android:drawable/ic_lock_silent_mode_off" />
+
+            <SeekBar
+                android:id="@+id/sbrVolume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:indeterminate="false" />
+        </TableRow>
+
+    </TableRow>
+
+
+</LinearLayout>
+
