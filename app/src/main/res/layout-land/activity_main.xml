@@ -100,7 +100,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_state"
                 android:contentDescription="@string/btn_play"
-                android:src="@drawable/btn_play_state"
+                android:src="@drawable/ic_play"
                 android:padding="2dp"/>
 
             <ImageView
@@ -126,12 +126,6 @@
             android:gravity="center_vertical"
             tools:ignore="RtlHardcoded">
 
-            <ImageView
-                android:id="@+id/iv_volume"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:contentDescription="@string/btn_volume"
-                android:src="@android:drawable/ic_lock_silent_mode_off" />
 
             <SeekBar
                 android:layout_marginEnd="20dp"

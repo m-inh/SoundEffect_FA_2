@@ -863,10 +863,10 @@ public class MainActivity2 extends Activity
 
     private void enableDisableButtons() {
         if (mIsPlaying) {
-            mPlayButton.setImageResource(android.R.drawable.ic_media_pause);
+            mPlayButton.setImageResource(R.drawable.ic_pause);
             mPlayButton.setContentDescription(getResources().getText(R.string.stop));
         } else {
-            mPlayButton.setImageResource(android.R.drawable.ic_media_play);
+            mPlayButton.setImageResource(R.drawable.ic_play);
             mPlayButton.setContentDescription(getResources().getText(R.string.play));
         }
     }
