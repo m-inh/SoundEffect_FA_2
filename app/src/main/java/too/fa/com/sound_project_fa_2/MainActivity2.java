@@ -36,6 +36,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.messenger.MessengerUtils;
+import com.facebook.messenger.ShareToMessengerParams;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -46,7 +50,7 @@ import java.util.ArrayList;
 import too.fa.com.sound_project_fa_2.soundfile.SoundFile;
 
 /**
- * The activity for the Ringdroid main editor window.  Keeps track of
+ * The activity for the SoundEffect main editor window.  Keeps track of
  * the waveform display, current horizontal offset, marker handles,
  * start / end text boxes, and handles all of the buttons and controls.
  */
@@ -54,6 +58,7 @@ public class MainActivity2 extends Activity
         implements MarkerView.MarkerListener,
         WaveformView.WaveformListener {
     private static final String TAG = "MainActivity2";
+
     private long mLoadingLastUpdateTime;
     private boolean mLoadingKeepGoing;
     private long mRecordingLastUpdateTime;
@@ -136,7 +141,7 @@ public class MainActivity2 extends Activity
         mRecordAudioThread = null;
         mSaveSoundFileThread = null;
 
-        // If the Ringdroid media select activity was launched via a
+        // If the SoundEffect media select activity was launched via a
         // GET_CONTENT intent, then we shouldn't display a "saved"
         // message when the user saves, we should just return whatever
         // they create.
@@ -166,7 +171,7 @@ public class MainActivity2 extends Activity
     /** Called when the activity is finally destroyed. */
     @Override
     protected void onDestroy() {
-        Log.v("Ringdroid", "EditActivity OnDestroy");
+        Log.v("SoundEffect", "EditActivity OnDestroy");
 
         mLoadingKeepGoing = false;
         mRecordingKeepGoing = false;
@@ -426,7 +431,7 @@ public class MainActivity2 extends Activity
     }
 
     //
-    // Static About dialog method, also called from RingdroidSelectActivity
+    // Static About dialog method, also called from SoundEffectSelectActivity
     //
 
     public static void onAbout(final Activity activity) {
@@ -995,12 +1000,12 @@ public class MainActivity2 extends Activity
     private void showFinalAlert(Exception e, CharSequence message) {
         CharSequence title;
         if (e != null) {
-            Log.e("Ringdroid", "Error: " + message);
-            Log.e("Ringdroid", getStackTrace(e));
+            Log.e("SoundEffect", "Error: " + message);
+            Log.e("SoundEffect", getStackTrace(e));
             title = getResources().getText(R.string.alert_title_failure);
             setResult(RESULT_CANCELED, new Intent());
         } else {
-            Log.v("Ringdroid", "Success: " + message);
+            Log.v("SoundEffect", "Success: " + message);
             title = getResources().getText(R.string.alert_title_success);
         }
 
@@ -1070,8 +1075,8 @@ public class MainActivity2 extends Activity
                     }
                     StringWriter writer = new StringWriter();
                     e.printStackTrace(new PrintWriter(writer));
-                    Log.e("Ringdroid", "Error: Failed to create " + outPath);
-                    Log.e("Ringdroid", writer.toString());
+                    Log.e("SoundEffect", "Error: Failed to create " + outPath);
+                    Log.e("SoundEffect", writer.toString());
                     fallbackToWAV = true;
                 }
 
@@ -1402,6 +1407,7 @@ public class MainActivity2 extends Activity
                 break;
             case R.id.action_share:
                 Toast.makeText(this,"share", Toast.LENGTH_SHORT).show();
+                shareAction();
                 break;
         }
         return true;
@@ -1478,4 +1484,31 @@ public class MainActivity2 extends Activity
             super.onBackPressed();
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AppEventsLogger.deactivateApp(this);
+    }
+
+    private static final int REQUEST_CODE_SHARE_TO_MESSENGER = 111;
+    private void shareAction(){
+        String mimeType = "audio/mpeg";
+
+        ShareToMessengerParams shareToMessengerParams =
+                ShareToMessengerParams.newBuilder(Uri.fromFile(mFile), mimeType)
+                        .build();
+
+        MessengerUtils.shareToMessenger(
+                this,
+                REQUEST_CODE_SHARE_TO_MESSENGER,
+                shareToMessengerParams);
+    }
+
 }

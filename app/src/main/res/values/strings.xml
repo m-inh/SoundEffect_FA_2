@@ -168,4 +168,8 @@
 
     <string name="about_title">About SoundEffect</string>
     <string name="about_text">About</string>
+
+
+
+    <string name="facebook_app_id">465007153691999</string>
 </resources>

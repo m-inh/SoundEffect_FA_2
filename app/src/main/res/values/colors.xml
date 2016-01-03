@@ -18,4 +18,9 @@
     <drawable name="type_bkgnd_notification">#88666600</drawable>
     <drawable name="type_bkgnd_music">#88000000</drawable>
     <drawable name="type_bkgnd_unsupported">#88cccccc</drawable>
+
+
+    <color name="bg_btn_add">#F44336</color>
+    <color name="bg_btn_add_pressed">#EF5350</color>
+    <color name="bg_btn_add_border">#B71C1C</color>
 </resources>

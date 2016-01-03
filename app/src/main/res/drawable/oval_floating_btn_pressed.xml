@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape android:shape="oval" xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/holo_red_dark"/>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bg_btn_add_pressed"/>
+    <stroke android:width="2dp"
+        android:color="@color/bg_btn_add"></stroke>
+    <corners android:radius="3dp"></corners>
 </shape>

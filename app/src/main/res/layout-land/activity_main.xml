@@ -88,7 +88,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_state"
                 android:contentDescription="@string/btn_speeddown"
-                android:src="@android:drawable/ic_media_previous" />
+                android:src="@drawable/ic_back"
+                android:padding="7dp"/>
 
             <ImageView
                 android:id="@+id/iv_play"
@@ -99,7 +100,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_state"
                 android:contentDescription="@string/btn_play"
-                android:src="@android:drawable/ic_media_play" />
+                android:src="@drawable/btn_play_state"
+                android:padding="2dp"/>
 
             <ImageView
                 android:id="@+id/iv_speedup"
@@ -110,7 +112,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_state"
                 android:contentDescription="@string/btn_speedup"
-                android:src="@android:drawable/ic_media_next" />
+                android:src="@drawable/ic_next"
+                android:padding="7dp"/>
 
         </TableRow>
 
@@ -131,6 +134,7 @@
                 android:src="@android:drawable/ic_lock_silent_mode_off" />
 
             <SeekBar
+                android:layout_marginEnd="20dp"
                 android:id="@+id/sbrVolume"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

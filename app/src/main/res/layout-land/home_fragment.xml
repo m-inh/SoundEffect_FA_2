@@ -8,14 +8,14 @@
     tools:ignore="RtlHardcoded">
 
     <Button
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_add_state"
-        android:text="+"
-        android:textColor="@android:color/white"
-        android:textSize="35dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="10dp"
+        android:text="Add"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:background="@drawable/btn_add_state"
         android:id="@+id/btn_add"
         tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
 </LinearLayout>
