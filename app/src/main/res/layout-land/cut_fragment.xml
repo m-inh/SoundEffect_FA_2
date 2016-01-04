@@ -71,6 +71,6 @@
         android:text="Submit"
         android:textSize="20sp"
         android:textColor="@android:color/white"
-        android:background="@drawable/btn_add_state"/>
+        android:background="@drawable/btn_submit_state"/>
 
 </RelativeLayout>

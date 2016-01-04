@@ -23,4 +23,8 @@
     <color name="bg_btn_add">#F44336</color>
     <color name="bg_btn_add_pressed">#EF5350</color>
     <color name="bg_btn_add_border">#B71C1C</color>
+
+    <color name="bg_btn_submit">#1976D2</color>
+    <color name="bg_btn_submit_pressed">#2196F3</color>
+    <color name="bg_btn_submit_border">#0D47A1</color>
 </resources>

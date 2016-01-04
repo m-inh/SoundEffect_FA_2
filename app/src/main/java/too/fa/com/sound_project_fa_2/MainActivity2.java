@@ -1406,7 +1406,6 @@ public class MainActivity2 extends Activity
                 Toast.makeText(this,"save", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_share:
-                Toast.makeText(this,"share", Toast.LENGTH_SHORT).show();
                 shareAction();
                 break;
         }
@@ -1499,12 +1498,16 @@ public class MainActivity2 extends Activity
 
     private static final int REQUEST_CODE_SHARE_TO_MESSENGER = 111;
     private void shareAction(){
-        String mimeType = "audio/mpeg";
+        if (mPlayer == null) {
+            Toast.makeText(MainActivity2.this, "Please insert file Audio", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        Toast.makeText(this,"share", Toast.LENGTH_SHORT).show();
+        String mimeType = "audio/mpeg";
         ShareToMessengerParams shareToMessengerParams =
                 ShareToMessengerParams.newBuilder(Uri.fromFile(mFile), mimeType)
                         .build();
-
         MessengerUtils.shareToMessenger(
                 this,
                 REQUEST_CODE_SHARE_TO_MESSENGER,

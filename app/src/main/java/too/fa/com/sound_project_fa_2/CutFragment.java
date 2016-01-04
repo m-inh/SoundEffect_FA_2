@@ -52,5 +52,7 @@ public class CutFragment extends Fragment implements View.OnClickListener{
 
     public void allowSubmitCut(boolean allow){
         btnSubmit.setEnabled(allow);
+        if (!allow) btnSubmit.setAlpha(0.5f);
+        else btnSubmit.setAlpha(1f);
     }
 }
